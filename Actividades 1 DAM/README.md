@@ -1,6 +1,6 @@
-﻿Actividad 2
+﻿**AAS-Actividad1**
 
-**Enunciado**
+*Enunciado*
 
 1. Para que tres números enteros den un triángulo válido, se tiene que dar la circunstancia de que la suma de dos cualquiera de los tiene que ser mayor que la del otro. Por tanto, el ejercicio consta de:
    1. Pedir tres números por consola, e informar si el triángulo es correcto, o no es correcto.
@@ -8,6 +8,7 @@
       1. Equilátero: los tres lados iguales.
       1. Isósceles: dos iguales y uno desigual
       1. Escaleno: los tres lados distintos
+
 2. Realizar un juego para adivinar un número. Para ello pedir un número N aleatorio de 1 a 40, y luego ir pidiendo números indicando “mayor” o “menor” según sea mayor o menor con respecto a N. El proceso termina cuando el usuario acierta. Y escribimos la cantidad de intentos antes del número exacto.
 
 
@@ -26,9 +27,9 @@ Al final del algoritmo informar:
 - Cuántos nombres me han introducido, la suma de los salarios y la media de los salarios.
 
 
-Actividad 3
+**AAS-Actividad2**
 
-**Enunciado**
+*Enunciado*
 
 ` `Escribe un programa que muestre el siguiente menú una y otra vez hasta que el usuario escoja la opción “4. Salir” o mientras la opción que introduzca no se encuentre entre las ofrecidas en el menú.
 
@@ -72,9 +73,9 @@ La ejecución del programa terminará diciendo adiós y ya no volverá a mostrar
 
 
 
-Actividad 4
+**AAS-Actividad3**
 
-**Enunciado**
+*Enunciado*
 
 Crear una clase Empleado con los siguientes atributos privados:
 
@@ -111,11 +112,11 @@ Crear una clase Principal con el método main y:
 
 
 
-Actividad 5
+**AAS-Actividad4**
 
 ![](img/Aspose.Words.313b8673-98b6-4221-9771-688eb922b130.007.png)
 
-**Enunciado**
+*Enunciado*
 
 Tomamos como base la actividad 4 de la Unidad Formativa 7. Pero hay que tener en cuenta que los atributos han cambiado un poco por la Asociación de Empleado con la clase Trabajo y con la clase Departamento, como ves en la figura del esquema de clases de la Actividad.
 
@@ -154,9 +155,9 @@ Antes de crear el Interface y la clase Empresa debemos probar que las clases cre
 - Crear una clase Principal con main static, con una prueba en secuencia que muestre cada información que sale de la prueba de cada método de la gestión de la Empresa. Separar cada prueba con un syso que indique claramente qué se va a probar, y el resultado.
 
 
-Actividad 6
+**AAS-Actividad5**
 
-Enunciado
+*Enunciado*
 
 Para la gestión de un centro educativo, un programa necesita contemplar las entidades profesor, alumno y administrativo, teniendo en cuenta que todos, a su vez, son personas.
 
@@ -213,9 +214,9 @@ Para probar crea Personas de distinto tipo y haz uno o más **Testing** que pr
 
 Para la prueba de buscar por tipo, cuando a la Clase **TestBuscar**… le llega la lista, recorre esta lista y llama al método que es propio de cada clase, Alumno, Profesor o Administrativo (“recuerda el casting de persona a la Clase correspondiente).
 
-Actividad 7
+**AAS-Actividad6**
 
-**Enunciado**
+*Enunciado*
 
 Realizar una Aplicación de gestión de proyectos, de acuerdo con la siguiente base de Datos:
 
