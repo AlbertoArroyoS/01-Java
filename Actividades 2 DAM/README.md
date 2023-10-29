@@ -2,7 +2,7 @@
 
 Realiza un programa en Java que pida 3 números por pantalla y determinará cuál de ellos es primo y cual no. El programa lanzará un hilo de ejecución por cada número, debido a la complejidad de tiempo que puede llevar el calcular si es primo o no, para que pueda ejecutarse en paralelo.
 
-**NumeroPrimos_Hilos**
+**Calculadora_HilosYSockets**
 
 Se pide hacer una aplicación cliente y otra servidora, que se conecten mediante Sockets. La idea será hacer una calculadora sencilla.
 
