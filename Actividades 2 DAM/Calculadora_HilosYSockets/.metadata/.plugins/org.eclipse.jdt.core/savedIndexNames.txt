@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\termi\Mi unidad\DAM\02- Segundo curso\Programacion Servicios y procesos\Laboratorio\Calculadora con Sockets\.metadata\.plugins\org.eclipse.jdt.core
+1974445290.index
+3641177884.index
+1518279375.index
+1865797976.index

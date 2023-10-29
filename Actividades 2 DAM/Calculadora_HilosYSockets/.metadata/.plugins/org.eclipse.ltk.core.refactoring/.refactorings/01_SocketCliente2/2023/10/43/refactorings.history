@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;cliente.hilo.SocketCliente&apos; to &apos;SocketCliente2&apos;&#x0D;&#x0A;- Original project: &apos;01_SocketCliente2&apos;&#x0D;&#x0A;- Original element: &apos;cliente.hilo.SocketCliente&apos;&#x0D;&#x0A;- Renamed element: &apos;cliente.hilo.SocketCliente2&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SocketCliente&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;cliente.hilo{SocketCliente.java[SocketCliente" matchStrategy="1" name="SocketCliente2" qualified="false" references="true" similarDeclarations="false" stamp="1698335100560" textual="false" version="1.0"/>
+</session>
