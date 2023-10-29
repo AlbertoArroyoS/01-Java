@@ -2,7 +2,7 @@
 
 AE-1. Hilos y Sockets - Programación de Servicios y Procesos 
 
-Alberto Arroyo Santofimia
+**Realizada por: Alberto Arroyo Santofimia**
 
 Se pide hacer dos programas cliente-servidor con sockets e hilos. La aplicación servidora programa consistirá en crear una aplicación que gestione una serie de películas de una biblioteca virtual, la aplicación cliente consumirá dicha aplicación servidora.
 
