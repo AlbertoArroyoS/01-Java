@@ -1,10 +1,10 @@
-**NumeroPrimos_Hilos**
+#**NumeroPrimos_Hilos**
 
 Realiza un programa en Java que pida 3 números por pantalla y determinará cuál de ellos es primo y cual no. El programa lanzará un hilo de ejecución por cada número, debido a la complejidad de tiempo que puede llevar el calcular si es primo o no, para que pueda ejecutarse en paralelo.
 
 
 
-**Calculadora_HilosYSockets**
+#**Calculadora_HilosYSockets**
 
 Se pide hacer una aplicación cliente y otra servidora, que se conecten mediante Sockets. La idea será hacer una calculadora sencilla.
 
@@ -22,7 +22,7 @@ Cada nueva conexion abrira un hilo distinto.
 
 
 
-**PSP-Actividad1-HilosYSockets**
+#**PSP-Actividad1-HilosYSockets**
 
 Se pide hacer dos programas cliente-servidor con sockets e hilos. La aplicación servidora programa consistirá en crear una aplicación que gestione una serie de películas de una biblioteca virtual, la aplicación cliente consumirá dicha aplicación servidora.
 
