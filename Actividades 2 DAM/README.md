@@ -37,3 +37,7 @@ El cliente deberá de recoger todos los datos del usuario necesarios y mandarlos
 Se pide añadir otra opción que sea “Consultar películas por director”. En este caso hay que tener en cuenta que puede haber varias películas por director, por lo que el servidor podrá devolver una lista de películas. Se recomienda pensar en grupo el formato de envío de información.
 
 Se pide añadir otra opción que sea “Añadir película”. En este caso el cliente pedirá todos los datos de la película y los enviará al servidor para que este lo guarde. La lista en el servidor deberá estar preparada para que solo pueda añadir una película cada hilo a la vez, si algún hilo está agregando una película, los demás hilos deberán de esperar a que el hilo acabe.
+
+**4-PSP-Actividad1-HilosYSockets**
+
+Version V2.1 del ejercicio anterior, con una cola de peliculas en la cual los hilos harán uso del wait y del notify antes de poder entrar en la cola de peliculas.
