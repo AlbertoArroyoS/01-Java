@@ -73,7 +73,7 @@ La ejecución del programa terminará diciendo adiós y ya no volverá a mostrar
 
 
 
-**AAS-Actividad3**
+## **AAS-Actividad3**
 
 *Enunciado*
 
@@ -214,7 +214,7 @@ Para probar crea Personas de distinto tipo y haz uno o más **Testing** que pr
 
 Para la prueba de buscar por tipo, cuando a la Clase **TestBuscar**… le llega la lista, recorre esta lista y llama al método que es propio de cada clase, Alumno, Profesor o Administrativo (“recuerda el casting de persona a la Clase correspondiente).
 
-**AAS-Actividad6**
+## **AAS-Actividad6**
 
 *Enunciado*
 
