@@ -1,4 +1,4 @@
-﻿**AAS-Actividad1**
+## ﻿**AAS-Actividad1**
 
 *Enunciado*
 
@@ -27,7 +27,7 @@ Al final del algoritmo informar:
 - Cuántos nombres me han introducido, la suma de los salarios y la media de los salarios.
 
 
-**AAS-Actividad2**
+## **AAS-Actividad2**
 
 *Enunciado*
 
@@ -112,7 +112,7 @@ Crear una clase Principal con el método main y:
 
 
 
-**AAS-Actividad4**
+## **AAS-Actividad4**
 
 ![](img/Aspose.Words.313b8673-98b6-4221-9771-688eb922b130.007.png)
 
@@ -155,7 +155,7 @@ Antes de crear el Interface y la clase Empresa debemos probar que las clases cre
 - Crear una clase Principal con main static, con una prueba en secuencia que muestre cada información que sale de la prueba de cada método de la gestión de la Empresa. Separar cada prueba con un syso que indique claramente qué se va a probar, y el resultado.
 
 
-**AAS-Actividad5**
+## **AAS-Actividad5**
 
 *Enunciado*
 
