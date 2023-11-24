@@ -1,4 +1,4 @@
-**1. NumeroPrimos_Hilos**
+##**1. NumeroPrimos_Hilos**
 
 Realiza un programa en Java que pida 3 números por pantalla y determinará cuál de ellos es primo y cual no. El programa lanzará un hilo de ejecución por cada número, debido a la complejidad de tiempo que puede llevar el calcular si es primo o no, para que pueda ejecutarse en paralelo.
 
