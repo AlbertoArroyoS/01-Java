@@ -59,3 +59,30 @@ Se pide que no pueda haber dos libros con ID o título repetido
 Se pide crear una aplicación java que sea capaz de trabajar con el servidor REST. La aplicación mostrara un menú que sea capaz de realizar todas las operaciones del servidor, como puede ser:
 
 Dar de alta un libro Dar de baja un libro por ID Modificar un libro por ID Obtener un libro por ID Listar todos los libros Salir Para cada opción, se tendrá que pedir los datos necesarios al usuario y/o mostrar los resultados pertinentes. La aplicación se ejecutará hasta que se pulse la opción de “salir”.
+
+
+## **6- Java Swing - Aplicación de gestión de contactos con Java Swing**
+
+Aplicación de gestión de contactos con Java Swing.
+
+Crea una ventana principal que muestre una lista de contactos en una tabla
+de dos columnas y con tres botones para la lógica. La tabla debe disponer
+de una barra de desplazamiento por si hay desbordamientos de filas.
+
+Agrega un botón "Añadir contacto" en la ventana principal. Al hacer clic en
+el botón "Añadir contacto", se abrirá una nueva ventana emergente que
+permitirá al usuario ingresar los detalles del contacto: nombre y número
+de teléfono. Después de ingresar los detalles del contacto y hacer clic en
+"OK", el contacto se agregará a la lista en la ventana principal.
+
+Agrega un botón "Editar". Al hacer clic en este botón, se abrirá otra ventana
+emergente que permitirá al usuario editar los detalles del contacto
+seleccionado previamente para modificarlos. Al hacer clic en “OK” la tabla
+de la ventana principal se actualizará automáticamente con los datos
+modificados.
+
+Agrega un botón "Eliminar". Al hacer clic en este botón, se eliminará el
+contacto de la lista que se haya seleccionado.
+
+Agrega la opción de guardar la lista de tareas en un
+archivo y cargarla nuevamente en la aplicación.
