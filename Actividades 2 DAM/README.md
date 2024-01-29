@@ -112,3 +112,31 @@ Solo se guardará una frase al mismo tiempo. Se utilizará un método de encript
 Se pide agregar seguridad a la aplicación para poder entrar. El programa arrancará con 3 objetos usuario que tendrá su nombre de usuario y su contraseña “hasheada”. Los objetos permanecerán en memoria durante todo el programa.
 
 Antes de mostrar el menú, el programa pedirá que se introduzca el nombre del usuario y su contraseña (sin “hashear”), en caso de que sea correcto, se mostrará el menú y un mensaje de bienvenida al usuario con su nombre, en caso contrario se le volverá a pedir hasta un máximo de tres veces. Si en tres intentos no se ha conseguido introducir bien los datos de ningún usuario registrado, la aplicación se detendrá.
+
+## **08- Laboratorio 1 - Ficheros**
+
+Se desea hacer un programa que pida un nombre usuario y un password al usuario del programa para permitir su acceso.
+
+El programa tendrá un fichero donde se guardarán el usuario y el password con el formato:
+
+USUARIO/PASSWORD
+
+Cada fila del fichero será un usuario y password, ej:
+
+Felix/1234
+
+Pepe/4321
+
+Ana/1111
+
+Una vez dentro, el programa nos dará la bienvenida y nos dará la opción de agregar más usuarios al fichero.
+
+## **09- Actividad 1 – Manejo de ficheros- Acceso a datos**
+
+Aprender a trabajar de manera práctica los ficheros mediante una pequeña aplicación de gestión de un almacén.
+
+Esta práctica consiste en la implementación de un programa Java para la gestión del almacén de artículos. Los artículos tendrán los siguientes atributos, id, nombre, descripción, stock (o cantidad) y precio.
+
+## **10- Actividad 1 – Manejo de ficheros- Acceso a datos. Version 2**
+
+Igual que la actividad 09. pero hecha seguiendo el modelo de tres capas visto en clase.
