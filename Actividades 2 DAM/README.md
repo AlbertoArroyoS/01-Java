@@ -145,7 +145,7 @@ Esta práctica consiste en la implementación de un programa Java para la gesti�
 
 Igual que la actividad 10. pero hecha seguiendo el modelo de tres capas visto en clase.
 
-## **09- Laboratorio 2 - BBDD**
+## **12- Laboratorio 2 - BBDD**
 
 Repetir laboratorio 1 (08-09)pero con BBDD. Se debe hacer siguiendo el modelo de tres capas visto en clase. La capa gestora realizará la lógica de negocio, es decir, la comprobación de que el usuario y password son correctos.
 
