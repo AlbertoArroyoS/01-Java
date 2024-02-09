@@ -144,3 +144,9 @@ Esta práctica consiste en la implementación de un programa Java para la gesti�
 ## **11- Actividad 1 – Manejo de ficheros- Acceso a datos. Version 2**
 
 Igual que la actividad 10. pero hecha seguiendo el modelo de tres capas visto en clase.
+
+## **09- Laboratorio 2 - BBDD**
+
+Repetir laboratorio 1 (08-09)pero con BBDD. Se debe hacer siguiendo el modelo de tres capas visto en clase. La capa gestora realizará la lógica de negocio, es decir, la comprobación de que el usuario y password son correctos.
+
+Además, se debe guardar la edad del usuario en BBDD y la aplicación no deberá dejar introducir un usuario con una edad menor de 18 (regla de negocio)
