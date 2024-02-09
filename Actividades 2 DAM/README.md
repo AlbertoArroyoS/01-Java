@@ -131,12 +131,16 @@ Ana/1111
 
 Una vez dentro, el programa nos dará la bienvenida y nos dará la opción de agregar más usuarios al fichero.
 
-## **09- Actividad 1 – Manejo de ficheros- Acceso a datos**
+## **09- Laboratorio 1 - Ficheros. Versión 2**
+
+Igual Igual que la actividad 08. pero hecha seguiendo el modelo de tres capas visto en clase.
+
+## **10- Actividad 1 – Manejo de ficheros- Acceso a datos**
 
 Aprender a trabajar de manera práctica los ficheros mediante una pequeña aplicación de gestión de un almacén.
 
 Esta práctica consiste en la implementación de un programa Java para la gestión del almacén de artículos. Los artículos tendrán los siguientes atributos, id, nombre, descripción, stock (o cantidad) y precio.
 
-## **10- Actividad 1 – Manejo de ficheros- Acceso a datos. Version 2**
+## **11- Actividad 1 – Manejo de ficheros- Acceso a datos. Version 2**
 
-Igual que la actividad 09. pero hecha seguiendo el modelo de tres capas visto en clase.
+Igual que la actividad 10. pero hecha seguiendo el modelo de tres capas visto en clase.
