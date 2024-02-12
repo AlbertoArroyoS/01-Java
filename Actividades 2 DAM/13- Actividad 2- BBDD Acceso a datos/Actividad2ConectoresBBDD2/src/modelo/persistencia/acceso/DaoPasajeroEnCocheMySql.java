@@ -1,0 +1,315 @@
+package modelo.persistencia.acceso;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import modelo.entidad.Coche;
+import modelo.entidad.Pasajero;
+import modelo.entidad.PasajeroEnCoche;
+import modelo.persistencia.datos.ConfiguracionPropiedades;
+import modelo.persistencia.interfaces.DaoCoche;
+import modelo.persistencia.interfaces.DaoPasajero;
+import modelo.persistencia.interfaces.DaoPasajeroEnCoche;
+/**
+ * Clase que implementa el interfaz DaoPasajeroEnCoche y proporciona métodos para interactuar con la persistencia
+ * utilizando una base de datos MySQL.
+ * 
+ * <p>Proporciona métodos para realizar operaciones CRUD en la entidad PasajeroEnCoche, así como métodos adicionales
+ * para abrir y cerrar conexiones y obtener información específica sobre pasajeros y coches.
+ * 
+ * @see DaoPasajeroEnCoche
+ * @author Alberto Arroyo Santofimia
+ * @version v2.0
+ * @since 2024-02-08
+ */
+public class DaoPasajeroEnCocheMySql implements DaoPasajeroEnCoche{
+	
+	//variables
+	private int filas = 0;
+	private String sql;
+	private Connection conexion;
+
+	
+	
+	/**
+	 * Método para asociar un pasajero a un coche en la base de datos.
+	 *
+	 * @param idCoche    El ID del coche al cual se asociará el pasajero.
+	 * @param idPasajero El ID del pasajero que se asociará al coche.
+	 * @return Un valor entero que representa el resultado de la operación:
+	 *         - 1: Éxito, el pasajero se asoció al coche correctamente.
+	 *         - 2: No se pudo abrir la conexión a la base de datos.
+	 *         - 3: Ocurrió una excepción SQLException durante la ejecución.
+	 */
+	@Override
+	public int addPasajeroCoche(int idCoche, int idPasajero) {
+		if(!abrirConexion()){
+			filas=2;
+			return filas;
+		}
+		sql = "INSERT INTO pasajeros_en_coches (id_coche, id_pasajero) VALUES (?, ?)";
+		
+		try (PreparedStatement ps = conexion.prepareStatement(sql)) {	
+			ps.setInt(1, idCoche);
+			ps.setInt(2, idPasajero);
+			filas = ps.executeUpdate();
+			filas=1;
+		} catch (SQLException e) {
+			filas=3;
+			return filas;
+		}
+		
+		return filas;
+	}
+	
+	/**
+	 * Método para eliminar un pasajero de un coche en la base de datos.
+	 *
+	 * @param idCoche    El ID del coche del cual se eliminará el pasajero.
+	 * @param idPasajero El ID del pasajero que se eliminará del coche.
+	 * @return Un valor entero que representa el resultado de la operación:
+	 *         - 1: Éxito, el pasajero fue eliminado del coche.
+	 *         - 0: No se encontró el coche o el pasajero asociado.
+	 *         - 2: No se pudo abrir la conexión a la base de datos.
+	 *         - 3: Ocurrió una excepción SQLException durante la ejecución.
+	 */
+	@Override
+	public int eliminarPasajeroCoche(int idCoche, int idPasajero) {
+		if(!abrirConexion()){
+			filas=2;
+			return filas;
+		}		
+        sql = "DELETE FROM pasajeros_en_coches WHERE id_coche = ? AND id_pasajero = ?";
+        
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
+            ps.setInt(1, idCoche);
+            ps.setInt(2, idPasajero);
+
+            int filasAfectadas = ps.executeUpdate();
+
+            if (filasAfectadas == 0) {
+            	filas=0;
+            } else {
+            	filas=1;
+            }
+
+        } catch (SQLException e) {
+        	filas=3;
+        }
+		return filas;
+	}
+	/**
+	 * Obtiene una lista de coches con información sobre los pasajeros asociados a un coche específico.
+	 *
+	 * @param idCoche El ID del coche del cual se desea obtener la información de pasajeros.
+	 * @return Una lista de objetos PasajeroEnCoche con información sobre los pasajeros asociados al coche.
+	 *         Si no se puede abrir la conexión, devuelve null.
+	 */
+	@Override
+	public List<PasajeroEnCoche> pasajerosEnCochePorId(int idCoche) {
+		if(!abrirConexion()){
+			filas=2;
+			return null;
+		}	
+		PasajeroEnCoche cochePasajero = null;
+		Coche coche=null;
+		Pasajero pasajero=null;
+		List<PasajeroEnCoche> listaPasajeros = new ArrayList<>();
+		
+        String sql = "SELECT * FROM Pasajeros_En_Coches WHERE id_coche = ?";
+
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
+            ps.setInt(1, idCoche);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                	cochePasajero = new PasajeroEnCoche ();
+                	DaoCoche daoCoche = new DaoCocheMySql();
+                	DaoPasajero daoPasajero= new DaoPasajeroMySql();
+                	coche = new Coche();
+                	pasajero = new Pasajero();
+                	
+                	int idCocheResultado = rs.getInt("id_coche");
+                    int idPasajero = rs.getInt("id_pasajero");
+                    
+                    coche = daoCoche.buscarCoche(idCocheResultado);
+                    pasajero= daoPasajero.buscarPasajero(idPasajero);
+                
+                    cochePasajero.setCoche(coche);
+                    cochePasajero.setPasajero(pasajero);
+             
+                    listaPasajeros.add(cochePasajero);
+                }
+            }
+
+        } catch (SQLException e) {
+            return null;
+        }
+
+        return listaPasajeros;
+    }
+		
+
+	/**
+	 * Obtiene una lista de coches disponibles que no tienen un pasajero asociado en la base de datos.
+	 *
+	 * @return Una lista de objetos Coche que representan los coches disponibles.
+	 *         Si no se puede abrir la conexión, devuelve null.
+	 */
+    @Override
+    public List<Coche> mostrarCochesSinPasajeros() {
+  		if(!abrirConexion()){
+			filas=2;
+			return null;
+		}
+  				
+  		List<Coche> listaAuxiliar = new ArrayList<>();
+  		
+        sql = "SELECT * FROM coches WHERE id NOT IN (SELECT id_coche FROM pasajeros_en_coches)";
+        
+          Coche coche = null;
+          try (PreparedStatement pstmt = conexion.prepareStatement(sql);
+               ResultSet rs = pstmt.executeQuery()) {
+
+              while (rs.next()) {
+              	coche = new Coche();
+              	coche.setId(rs.getInt("ID"));
+  				coche.setMarca(rs.getString("MARCA"));
+  				coche.setModelo(rs.getString("MODELO"));
+  				coche.setFabYear(rs.getInt("AÑO_FABRICACION"));
+  				coche.setKilometros(rs.getInt("KILOMETROS"));
+
+                  listaAuxiliar.add(coche);
+              }
+
+          } catch (SQLException e) {
+              e.printStackTrace(); // Manejar la excepción de alguna manera adecuada en tu aplicación
+          }
+  		return listaAuxiliar;
+      }
+    /**
+	 * Muestra todos los coches disponibles y el número de pasajeros asociados en la base de datos.
+	 *
+	 * @return Un Map donde las claves son objetos Coche representando coches disponibles,
+	 *         y los valores son enteros representando el número de pasajeros asociados a cada coche.
+	 *         Si no se puede abrir la conexión, devuelve null.
+	 */
+    @Override
+    public Map<Coche, Integer> mostrarCochesConNumeroPasajeros() {
+        if (!abrirConexion()) {
+            filas = 2;
+            return null;
+        }
+
+        Map<Coche, Integer> cochesConPasajeros = new HashMap<>();
+        String sql = "SELECT " +
+                     "c.id AS coche_id, " +
+                     "c.marca, " +
+                     "c.modelo, " +
+                     "c.año_fabricacion, " +
+                     "c.kilometros, " +
+                     "COUNT(pc.id_pasajero) AS num_pasajeros_en_coches " +
+                     "FROM coches c " +
+                     "LEFT JOIN pasajeros_en_coches pc ON c.id = pc.id_coche " +
+                 //    "WHERE pc.id_pasajero IS NOT NULL " +
+                     "GROUP BY coche_id, c.marca, c.modelo, c.año_fabricacion, c.kilometros";
+
+        try (PreparedStatement pstmt = conexion.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                Coche coche = new Coche();
+                coche.setId(rs.getInt("coche_id"));
+                coche.setMarca(rs.getString("marca"));
+                coche.setModelo(rs.getString("modelo"));
+                coche.setFabYear(rs.getInt("año_fabricacion"));
+                coche.setKilometros(rs.getInt("kilometros"));
+
+                int numPasajeros = rs.getInt("num_pasajeros_en_coches");
+                cochesConPasajeros.put(coche, numPasajeros);
+            }
+
+        } catch (SQLException e) {
+            return null;
+        }
+
+        return cochesConPasajeros;
+    }
+
+  	
+
+    /**
+	 * Muestra todos los coches y sus pasajeros asociados en la base de datos.
+	 *
+	 * @return Una lista de objetos PasajeroEnCoche con información sobre los coches y sus pasajeros asociados.
+	 *         Si no se puede abrir la conexión, devuelve null.
+	 */
+  	@Override
+  	public List<PasajeroEnCoche> mostrarCochesConPasajeros() {
+    	if(!abrirConexion()){
+			filas=2;
+			return null;
+		}	
+    	List<PasajeroEnCoche> listaAuxiliar = new ArrayList<>();
+    	
+    	sql = "SELECT * FROM PASAJEROS_EN_COCHES;";
+    	PasajeroEnCoche cochePasajero;
+        Coche coche = null;
+        Pasajero pasajero = null;
+        try (PreparedStatement pstmt = conexion.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+            	cochePasajero = new PasajeroEnCoche ();
+            	DaoCoche daoCoche = new DaoCocheMySql();
+            	DaoPasajero daoPasajero= new DaoPasajeroMySql();
+            	coche = new Coche();
+            	pasajero = new Pasajero();
+            	
+            	int idCocheResultado = rs.getInt("id_coche");
+                int idPasajero = rs.getInt("id_pasajero");
+                
+                coche = daoCoche.buscarCoche(idCocheResultado);
+                pasajero= daoPasajero.buscarPasajero(idPasajero);
+            
+                cochePasajero.setCoche(coche);
+                cochePasajero.setPasajero(pasajero);
+                   	
+  			   listaAuxiliar.add(cochePasajero);
+
+          
+            }
+
+        } catch (SQLException e) {
+            return null; // Manejar la excepción de alguna manera adecuada en tu aplicación
+        }
+		return listaAuxiliar;
+    }
+  	/**
+	 * Abre una conexión a la base de datos utilizando la URL, el nombre de la base de datos,
+	 * el usuario y la contraseña proporcionados.
+	 *
+	 * @return - <b>true</b> si la conexión se abre con éxito
+	 *         - <b>false</b> false en caso de error.
+	 */
+	public boolean abrirConexion(){
+		ConfiguracionPropiedades conf = new ConfiguracionPropiedades();
+		String url=conf.getProperty("url").toString();
+		String usuario = conf.getProperty("usuario").toString();
+		String password = conf.getProperty("password").toString();
+		String nombreBBDD =conf.getProperty("nombreBBDD").toString();
+		try {
+			conexion = DriverManager.getConnection(url+nombreBBDD,usuario,password);
+		} catch (SQLException e) {
+			return false;
+		}
+		return true;
+	}
+}
