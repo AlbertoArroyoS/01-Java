@@ -150,3 +150,9 @@ Igual que la actividad 10. pero hecha seguiendo el modelo de tres capas visto en
 Repetir laboratorio 1 (08-09)pero con BBDD. Se debe hacer siguiendo el modelo de tres capas visto en clase. La capa gestora realizará la lógica de negocio, es decir, la comprobación de que el usuario y password son correctos.
 
 Además, se debe guardar la edad del usuario en BBDD y la aplicación no deberá dejar introducir un usuario con una edad menor de 18 (regla de negocio)
+
+## **13- Actividad 2 - BBDD (JDBC) - Acceso a datos**
+
+Aprender a manejar JDBC mediante una pequeña aplicación de gestión de coches
+
+Se desea hacer un CRUD completo de la entidad ‘Coche’, pero esta vez no se trabajará con ningún fichero, se trabajará con una BBDD. Es muy importante usar el patrón DAO visto en clase. Los parámetros de conexión a la BBDD deben estar hechos en un fichero de propiedades.
