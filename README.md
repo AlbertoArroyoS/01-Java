@@ -27,4 +27,7 @@ Actividades de Java que voy realizando
 11. Actividad1Ficheros_V2. (ACCESO A DATOS)
 12. Laboratorio2BBDD. (ACCESO A DATOS)
 13. Actividad 2- BBDD Acceso a datos. (ACCESO A DATOS)
+14. Actividad 3 Requerimiento 1 - JPA. (ACCESO A DATOS)
+15. Actividad 3 Requerimiento 2 - JPA. (ACCESO A DATOS)
+16. Actividad 3 Requerimiento 3 - JAXB. (ACCESO A DATOS)
 

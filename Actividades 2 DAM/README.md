@@ -156,3 +156,15 @@ Además, se debe guardar la edad del usuario en BBDD y la aplicación no deberá
 Aprender a manejar JDBC mediante una pequeña aplicación de gestión de coches
 
 Se desea hacer un CRUD completo de la entidad ‘Coche’, pero esta vez no se trabajará con ningún fichero, se trabajará con una BBDD. Es muy importante usar el patrón DAO visto en clase. Los parámetros de conexión a la BBDD deben estar hechos en un fichero de propiedades.
+
+## **14- Actividad 3 Requerimiento 1 - JPA - Acceso a datos**
+
+Se pide diseñar el programa mediante JPA que cumpla con, al menos, los siguientes requisitos y entidades.
+
+## **15- Actividad 3 Requerimiento 2 - JPA - Acceso a datos**
+
+Se pide realizar un nuevo modelo de datos que cubra todos los tipos de relaciones visto en clase, esto es, 1 a 1, 1 a N y N a M. El modelo tendrá las entidades necesarias para realizar dichas relaciones y será inventado por los alumnos, es decir, será un trabajo original. Se piden hacer las entidades y las anotaciones en cada entidad para realizar el modelo de datos de JPA.
+
+## **16- Actividad 3 Requerimiento 3 - JAXB - Acceso a datos**
+
+Aplicando JAXB, coger la clase ‘Articulo’ de la actividad 1 y serializar una lista con 3 artículos a XML. Para ello se deberán de usar las anotaciones de JAXB correspondientes.
