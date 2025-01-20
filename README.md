@@ -32,7 +32,6 @@ Actividades de Java que voy realizando
 16. Actividad 3 - JAXBE. (ACCESO A DATOS)
 
 ## 3- Actividades Hack a Boss - Java básico
-### Actividades realizadas bootcamp
 
 1. Introducción a Java.
 2. Estructuras de control.
@@ -43,7 +42,6 @@ Actividades de Java que voy realizando
 7. JPA.
 
 ## 4- Actividades Hack a Boss - Java avanzado
-### Actividades realizadas bootcamp
 
 1. Manejo de excepciones.
 2. Hilos Threads.
@@ -57,12 +55,17 @@ Actividades de Java que voy realizando
 10. Proyecto completo JSP+JPA.
 
 ## 5- Actividades Hack a Boss - Buenas prácticas
-### Actividades realizadas bootcamp
 
 1. Patrones de diseño creacionales.
 2. Patrones de diseño estructurales y de comportamiento
 3. Refactorización.
 4. Clean Code y solid.
+
+## 6- Actividades Hack a Boss - Spring Boot
+
+1. Intruducción a Spring.
+2. Patrón MVC.
+3. Postmapping y requestbody.
 
 ## 7- Pruebas técnicas Hack a Boss 
 
