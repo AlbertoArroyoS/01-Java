@@ -1,0 +1,11 @@
+com\clase\persona\logica\Persona_.class
+com\clase\persona\logica\Controladora.class
+com\clase\persona\persistencia\exceptions\PreexistingEntityException.class
+com\clase\persona\logica\Persona.class
+com\clase\persona\persistencia\exceptions\IllegalOrphanException.class
+com\clase\persona\persistencia\exceptions\NonexistentEntityException.class
+com\clase\persona\persistencia\PersonaJpaController.class
+com\clase\persona\JakartaRestConfiguration.class
+com\clase\persona\servlets\PersonaSv.class
+com\clase\persona\persistencia\ControladoraPersistencia.class
+com\clase\persona\resources\JakartaEE8Resource.class

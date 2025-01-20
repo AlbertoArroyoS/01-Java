@@ -1,0 +1,4 @@
+logica\Producto.class
+com\mycompany\inventario\servlets\SvInventario.class
+com\mycompany\inventario\resources\JakartaEE8Resource.class
+com\mycompany\inventario\JakartaRestConfiguration.class
