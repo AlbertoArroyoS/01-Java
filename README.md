@@ -65,7 +65,7 @@ Actividades de Java que voy realizando
 
 1. Intruducción a Spring.
 2. Patrón MVC.
-3. Postmapping y requestbody.
+3. Postmapping, GetMapping, PathVariable, RequestParam y RequestBody.
 
 ## 7- Pruebas técnicas Hack a Boss 
 
