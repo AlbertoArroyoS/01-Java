@@ -64,7 +64,9 @@ Actividades de Java que voy realizando
 3. Refactorización.
 4. Clean Code y solid.
 
-## 5- Pruebas técnicas Hack a Boss 
+## 7- Pruebas técnicas Hack a Boss 
 
-
+1. Java Básico
+2. Java Avanzado
+3. Java Avanzado + Buenas prácticas
 
